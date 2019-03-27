@@ -22,4 +22,10 @@ public enum Romanos {
         this.valorDecimal = decimal;
     }
 
+    //Getters
+
+
+    public int getValorDecimal() {
+        return valorDecimal;
+    }
 }
