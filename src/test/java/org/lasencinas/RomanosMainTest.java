@@ -25,4 +25,11 @@ public class RomanosMainTest {
         assertTrue(RomanosMain.verificarString(numeroComplejo));
         //assertTrue(RomanosMain.verificarString(numeroFallo));
     }
+
+    @Test
+    public void calculoNumerosRomanosTest(){
+        //Sumatorios
+        String numeroSencillo = "MDCLXVI";
+        assertEquals(1666, RomanosMain.calculoNumerosRomanos(numeroSencillo));
+    }
 }
