@@ -13,16 +13,16 @@ public class NumerosRomanos{
         return numero.matches(regex);
     }
 
-    public static Set<String> buscarGruposSuma(String numero){
-        Set<String> sumatorios = new HashSet<>();
-        String regexSumatorio = "[MCXI]{3}|(?<!C)[DM]|(?<!X)[LC](?!D)|(?<!I)[VX](?![LC])|I(?![VX])";
-        Pattern p = Pattern.compile(regexSumatorio);
-        Matcher m = p.matcher(numero);
-        while (m.find()){
-            sumatorios.add(m.group());
-        }
-        return sumatorios;
+    public static Set<String> buscarGruposResta(String numero){
+            Set<String> elementosExtraidos = new HashSet<>();
+            String regex = "(C[DM])|(X[LC])|(I[VX])";
+            Pattern p = Pattern.compile(regex);
+            Matcher m = p.matcher(numero);
+            while (m.find()){
+                elementosExtraidos.add(m.group());
+            }
+            return elementosExtraidos;
     }
 
-    pu
+
 }

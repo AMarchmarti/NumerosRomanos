@@ -27,10 +27,14 @@ public class NumerosRomanosTest {
     }
 
     @Test
-    public void buscarGruposSumaTest(){
-        //Sumatorios
-        String numeroSencillo = "MDCLXVI";
-        assertNotNull(NumerosRomanos.buscarGruposSuma(numeroSencillo));
-        System.out.println(NumerosRomanos.buscarGruposSuma(numeroSencillo));;
+    public void buscarGruposRestaTest(){
+        String numeroSencillo = "IX";
+        String numero = "MCM";
+        String numeroComplejo = "MCMXCIX";
+        assertNotNull(NumerosRomanos.buscarGruposResta(numeroSencillo));
+        assertNotNull(NumerosRomanos.buscarGruposResta(numero));
+        assertNotNull(NumerosRomanos.buscarGruposResta(numeroComplejo));
+        assertTrue(NumerosRomanos.buscarGruposResta(numeroComplejo).contains("CM"));
+
     }
 }
