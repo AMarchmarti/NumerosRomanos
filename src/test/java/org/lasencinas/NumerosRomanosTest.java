@@ -45,10 +45,28 @@ public class NumerosRomanosTest {
         String normal = "MDL";
         String complejo = "MDCLXVI";
         String dificil = "MDCCCLXXXVIII";
-        assertEquals(1000, NumerosRomanos.sumaValores(facil));
-        assertEquals(2, NumerosRomanos.sumaValores(sencillo));
-        assertEquals(1550, NumerosRomanos.sumaValores(normal));
-        assertEquals(1666, NumerosRomanos.sumaValores(complejo));
-        assertEquals(1888, NumerosRomanos.sumaValores(dificil));
+        assertEquals(1000, NumerosRomanos.sumaValores(facil), 0);
+        assertEquals(2, NumerosRomanos.sumaValores(sencillo), 0);
+        assertEquals(1550, NumerosRomanos.sumaValores(normal), 0);
+        assertEquals(1666, NumerosRomanos.sumaValores(complejo), 0);
+        assertEquals(1888, NumerosRomanos.sumaValores(dificil), 0);
+    }
+
+    @Test
+    public void sumaValoresExtraidosTest(){
+        String facil ="IV";
+        String sencillo = "IX";
+        String normal = "XCIX";
+        String complejo = "CMXC";
+        String dificil = "CDIV";
+        String leyenda = "CMXCIX";
+        String dios = "CDXLIV";
+        assertEquals(4, NumerosRomanos.sumaValoresExtraidos(facil), 0);
+        assertEquals(9, NumerosRomanos.sumaValoresExtraidos(sencillo), 0);
+        assertEquals(99, NumerosRomanos.sumaValoresExtraidos(normal), 0);
+        assertEquals(990, NumerosRomanos.sumaValoresExtraidos(complejo), 0);
+        assertEquals(404, NumerosRomanos.sumaValoresExtraidos(dificil), 0);
+        assertEquals(999, NumerosRomanos.sumaValoresExtraidos(leyenda), 0);
+        assertEquals(444, NumerosRomanos.sumaValoresExtraidos(dios), 0);
     }
 }

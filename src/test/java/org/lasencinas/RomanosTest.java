@@ -11,7 +11,7 @@ public class RomanosTest{
 
     @BeforeClass
     public static void CreacionArrayNumerosRomanos(){
-        malditosRomanos = new String[7];
+        malditosRomanos = new String[13];
         int numerosRomanos = 0;
         for (Romanos romanos : Romanos.values()){
             malditosRomanos[romanos.ordinal()] = romanos.name();

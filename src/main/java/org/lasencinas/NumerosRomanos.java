@@ -25,4 +25,30 @@ public class NumerosRomanos{
     }
 
 
+    public static Integer sumaValores(String numero) {
+        int total = 0;
+        for (int i = 0; i < numero.length(); i++) {
+            Character num = numero.charAt(i);
+            for (Romanos numeroRomano : Romanos.values()) {
+                if (numeroRomano.name().equals(num.toString())) {
+                    total += numeroRomano.getValorDecimal();
+                }
+            }
+        }
+        return total;
+    }
+
+    public static Integer sumaValoresExtraidos(String numero) {
+        Set<String> numeros = buscarGruposResta(numero);
+        int total = 0;
+        for (String romanos : numeros) {
+            for (Romanos numerosRomanos : Romanos.values()) {
+                if (numerosRomanos.name().equals(romanos)) {
+                    total += numerosRomanos.getValorDecimal();
+                }
+            }
+        }
+        return total;
+    }
+
 }
