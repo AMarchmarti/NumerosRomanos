@@ -51,4 +51,21 @@ public class NumerosRomanos{
         return total;
     }
 
+    public static Integer valorFinal(String numero){
+        verificarString(numero);
+        Set<String> numerosRomanos = buscarGruposResta(numero);
+        String regex = "^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(numero);
+        int total = 0;
+        while (m.find()){
+            if (numerosRomanos.contains(m.group())){
+                total += sumaValoresExtraidos(numero);
+            }else{
+                total += sumaValores(numero);
+            }
+        }
+        return total;
+    }
+
 }
