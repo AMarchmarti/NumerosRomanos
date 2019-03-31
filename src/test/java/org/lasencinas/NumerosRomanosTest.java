@@ -75,16 +75,20 @@ public class NumerosRomanosTest {
         String facil ="XIV";
         String sencillo = "XXVI";
         String normal = "CXLV";
+        String semiNormal = "CD";
         String complejo = "CCCXLII";
         String dificil = "DLXXXIX";
         String leyenda = "MMMCMLI";
         String dios = "MCMXLVII";
+        String diosDos = "MMMCMXCIX";
         assertEquals(14, NumerosRomanos.valorFinal(facil), 0);
         assertEquals(26, NumerosRomanos.valorFinal(sencillo), 0);
         assertEquals(145, NumerosRomanos.valorFinal(normal), 0);
+        assertEquals(400, NumerosRomanos.valorFinal(semiNormal), 0);
         assertEquals(342, NumerosRomanos.valorFinal(complejo), 0);
         assertEquals(589, NumerosRomanos.valorFinal(dificil), 0);
         assertEquals(3951, NumerosRomanos.valorFinal(leyenda), 0);
         assertEquals(1947, NumerosRomanos.valorFinal(dios), 0);
+        assertEquals(3999, NumerosRomanos.valorFinal(diosDos), 0);
     }
 }
