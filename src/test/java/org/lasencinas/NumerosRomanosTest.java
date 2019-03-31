@@ -79,12 +79,12 @@ public class NumerosRomanosTest {
         String dificil = "DLXXXIX";
         String leyenda = "MMMCMLI";
         String dios = "MCMXLVII";
-        assertEquals(14, NumerosRomanos.sumaValoresExtraidos(facil), 0);
-        assertEquals(26, NumerosRomanos.sumaValoresExtraidos(sencillo), 0);
-        assertEquals(145, NumerosRomanos.sumaValoresExtraidos(normal), 0);
-        assertEquals(342, NumerosRomanos.sumaValoresExtraidos(complejo), 0);
-        assertEquals(589, NumerosRomanos.sumaValoresExtraidos(dificil), 0);
-        assertEquals(3951, NumerosRomanos.sumaValoresExtraidos(leyenda), 0);
-        assertEquals(1947, NumerosRomanos.sumaValoresExtraidos(dios), 0);
+        assertEquals(14, NumerosRomanos.valorFinal(facil), 0);
+        assertEquals(26, NumerosRomanos.valorFinal(sencillo), 0);
+        assertEquals(145, NumerosRomanos.valorFinal(normal), 0);
+        assertEquals(342, NumerosRomanos.valorFinal(complejo), 0);
+        assertEquals(589, NumerosRomanos.valorFinal(dificil), 0);
+        assertEquals(3951, NumerosRomanos.valorFinal(leyenda), 0);
+        assertEquals(1947, NumerosRomanos.valorFinal(dios), 0);
     }
 }
