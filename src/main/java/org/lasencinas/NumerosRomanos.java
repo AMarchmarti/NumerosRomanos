@@ -15,20 +15,8 @@ public class NumerosRomanos{
         return numero.matches(regex);
     }
 
-    public static Set<String> buscarGruposResta(String numero){
-            Set<String> elementosExtraidos = new HashSet<>();
-            String regex = "(C[DM])|(X[LC])|(I[VX])";
-            Pattern p = Pattern.compile(regex);
-            Matcher m = p.matcher(numero);
-            while (m.find()){
-                elementosExtraidos.add(m.group());
-            }
-            return elementosExtraidos;
-    }
-
-    public static List<String> buscarGruposSuma(String numero){
+    public static List<String> buscarGrupos(String regex, String numero){
         List<String> elementosSumatorios = new ArrayList<>();
-        String regex = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(numero);
         while (m.find()){
@@ -50,21 +38,12 @@ public class NumerosRomanos{
         return total;
     }
 
-    public static Integer sumaValores(Set <String> numeros) {
-        int total = 0;
-        for (String romanos : numeros) {
-            for (Romanos numerosRomanos : Romanos.values()) {
-                if (numerosRomanos.name().equals(romanos)) {
-                    total += numerosRomanos.getValorDecimal();
-                }
-            }
-        }
-        return total;
-    }
 
     public static Integer valorFinal(String numero){
         verificarString(numero);
-        return sumaValores(buscarGruposSuma(numero)) + sumaValores(buscarGruposResta(numero));
+        String regexRestan = "(C[DM])|(X[LC])|(I[VX])";
+        String regexSuman = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
+        return sumaValores(buscarGrupos(regexSuman, numero)) + sumaValores(buscarGrupos(regexRestan, numero));
     }
 
 }
