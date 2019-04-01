@@ -38,8 +38,7 @@ public class NumerosRomanos{
     }
 
 
-    public static Integer sumaValores(String numero) {
-        List<String> numeros = buscarGruposSuma(numero);
+    public static Integer sumaValores(List<String> numeros) {
         int total = 0;
         for (String romanos : numeros) {
             for (Romanos numeroRomano : Romanos.values()) {
@@ -51,8 +50,7 @@ public class NumerosRomanos{
         return total;
     }
 
-    public static Integer sumaValoresExtraidos(String numero) {
-        Set<String> numeros = buscarGruposResta(numero);
+    public static Integer sumaValores(Set <String> numeros) {
         int total = 0;
         for (String romanos : numeros) {
             for (Romanos numerosRomanos : Romanos.values()) {
@@ -66,7 +64,7 @@ public class NumerosRomanos{
 
     public static Integer valorFinal(String numero){
         verificarString(numero);
-        return sumaValores(numero) + sumaValoresExtraidos(numero);
+        return sumaValores(buscarGruposSuma(numero)) + sumaValores(buscarGruposResta(numero));
     }
 
 }

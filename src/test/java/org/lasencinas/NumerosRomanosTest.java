@@ -58,11 +58,11 @@ public class NumerosRomanosTest {
         String normal = "MDL";
         String complejo = "MDCLXVI";
         String dificil = "MDCCCLXXXVIII";
-        assertEquals(1000, NumerosRomanos.sumaValores(facil), 0);
-        assertEquals(2, NumerosRomanos.sumaValores(sencillo), 0);
-        assertEquals(1550, NumerosRomanos.sumaValores(normal), 0);
-        assertEquals(1666, NumerosRomanos.sumaValores(complejo), 0);
-        assertEquals(1888, NumerosRomanos.sumaValores(dificil), 0);
+        assertEquals(1000, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposSuma(facil)), 0);
+        assertEquals(2, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposSuma(sencillo)), 0);
+        assertEquals(1550, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposSuma(normal)), 0);
+        assertEquals(1666, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposSuma(complejo)), 0);
+        assertEquals(1888, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposSuma(dificil)), 0);
     }
 
     @Test
@@ -74,13 +74,13 @@ public class NumerosRomanosTest {
         String dificil = "CDIV";
         String leyenda = "CMXCIX";
         String dios = "CDXLIV";
-        assertEquals(4, NumerosRomanos.sumaValoresExtraidos(facil), 0);
-        assertEquals(9, NumerosRomanos.sumaValoresExtraidos(sencillo), 0);
-        assertEquals(99, NumerosRomanos.sumaValoresExtraidos(normal), 0);
-        assertEquals(990, NumerosRomanos.sumaValoresExtraidos(complejo), 0);
-        assertEquals(404, NumerosRomanos.sumaValoresExtraidos(dificil), 0);
-        assertEquals(999, NumerosRomanos.sumaValoresExtraidos(leyenda), 0);
-        assertEquals(444, NumerosRomanos.sumaValoresExtraidos(dios), 0);
+        assertEquals(4, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposResta(facil)), 0);
+        assertEquals(9, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposResta(sencillo)), 0);
+        assertEquals(99, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposResta(normal)), 0);
+        assertEquals(990, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposResta(complejo)), 0);
+        assertEquals(404, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposResta(dificil)), 0);
+        assertEquals(999, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposResta(leyenda)), 0);
+        assertEquals(444, NumerosRomanos.sumaValores(NumerosRomanos.buscarGruposResta(dios)), 0);
     }
 
     @Test
