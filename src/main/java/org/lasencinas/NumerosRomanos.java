@@ -1,7 +1,9 @@
 package org.lasencinas;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,8 +26,8 @@ public class NumerosRomanos{
             return elementosExtraidos;
     }
 
-    public static Set<String> buscarGruposSuma(String numero){
-        Set<String> elementosSumatorios = new HashSet<>();
+    public static List<String> buscarGruposSuma(String numero){
+        List<String> elementosSumatorios = new ArrayList<>();
         String regex = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(numero);
@@ -37,11 +39,11 @@ public class NumerosRomanos{
 
 
     public static Integer sumaValores(String numero) {
+        List<String> numeros = buscarGruposSuma(numero);
         int total = 0;
-        for (int i = 0; i < numero.length(); i++) {
-            Character num = numero.charAt(i);
+        for (String romanos : numeros) {
             for (Romanos numeroRomano : Romanos.values()) {
-                if (numeroRomano.name().equals(num.toString())) {
+                if (numeroRomano.name().equals(romanos)) {
                     total += numeroRomano.getValorDecimal();
                 }
             }
@@ -64,14 +66,7 @@ public class NumerosRomanos{
 
     public static Integer valorFinal(String numero){
         verificarString(numero);
-        String regex = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
-        Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(numero);
-        int total = 0;
-        while (m.find()){
-            total += sumaValores(m.group());
-        }
-        return total + sumaValoresExtraidos(numero);
+        return sumaValores(numero) + sumaValoresExtraidos(numero);
     }
 
 }

@@ -41,9 +41,11 @@ public class NumerosRomanosTest {
     @Test
     public void buscarGruposSumaTest(){
         String facil = "M";
+        String sencillo = "II";
         String normal = "MDL";
         String dificil = "MDCCCLXXXVIII";
         assertNotNull(NumerosRomanos.buscarGruposSuma(facil));
+        assertNotNull(NumerosRomanos.buscarGruposSuma(sencillo));
         assertNotNull(NumerosRomanos.buscarGruposSuma(normal));
         assertNotNull(NumerosRomanos.buscarGruposSuma(dificil));
         assertTrue(NumerosRomanos.buscarGruposSuma(dificil).contains("M"));
@@ -92,6 +94,8 @@ public class NumerosRomanosTest {
         String leyenda = "MMMCMLI";
         String dios = "MCMXLVII";
         String diosDos = "MMMCMXCIX";
+        String cuatroCientosCatorce = "CDXIV";
+        String cuatroCientosTreintaNueve  = "CDXXXIX";
         assertEquals(14, NumerosRomanos.valorFinal(facil), 0);
         assertEquals(26, NumerosRomanos.valorFinal(sencillo), 0);
         assertEquals(145, NumerosRomanos.valorFinal(normal), 0);
@@ -101,5 +105,7 @@ public class NumerosRomanosTest {
         assertEquals(3951, NumerosRomanos.valorFinal(leyenda), 0);
         assertEquals(1947, NumerosRomanos.valorFinal(dios), 0);
         assertEquals(3999, NumerosRomanos.valorFinal(diosDos), 0);
+        assertEquals(414, NumerosRomanos.valorFinal(cuatroCientosCatorce), 0);
+        assertEquals(439, NumerosRomanos.valorFinal(cuatroCientosTreintaNueve), 0);
     }
 }
