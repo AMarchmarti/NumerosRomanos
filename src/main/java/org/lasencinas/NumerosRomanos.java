@@ -24,6 +24,17 @@ public class NumerosRomanos{
             return elementosExtraidos;
     }
 
+    public static Set<String> buscarGruposSuma(String numero){
+        Set<String> elementosSumatorios = new HashSet<>();
+        String regex = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(numero);
+        while (m.find()){
+            elementosSumatorios.add(m.group());
+        }
+        return elementosSumatorios;
+    }
+
 
     public static Integer sumaValores(String numero) {
         int total = 0;
