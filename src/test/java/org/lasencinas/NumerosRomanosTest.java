@@ -39,6 +39,17 @@ public class NumerosRomanosTest {
     }
 
     @Test
+    public void buscarGruposSumaTest(){
+        String facil = "M";
+        String normal = "MDL";
+        String dificil = "MDCCCLXXXVIII";
+        assertNotNull(NumerosRomanos.buscarGruposSuma(facil));
+        assertNotNull(NumerosRomanos.buscarGruposSuma(normal));
+        assertNotNull(NumerosRomanos.buscarGruposSuma(dificil));
+        assertTrue(NumerosRomanos.buscarGruposSuma(dificil).contains("M"));
+    }
+
+    @Test
     public void sumaValoresTest(){
         String facil = "M";
         String sencillo = "II";

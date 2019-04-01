@@ -9,5 +9,8 @@
         <module name="NumerosRomanos" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="NumerosRomanos" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
