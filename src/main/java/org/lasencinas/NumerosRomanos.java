@@ -40,10 +40,13 @@ public class NumerosRomanos{
 
 
     public static Integer valorFinal(String numero){
-        verificarString(numero);
         String regexRestan = "(C[DM])|(X[LC])|(I[VX])";
         String regexSuman = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
-        return sumaValores(buscarGrupos(regexSuman, numero)) + sumaValores(buscarGrupos(regexRestan, numero));
+        if (verificarString(numero)) {
+            return sumaValores(buscarGrupos(regexSuman, numero)) + sumaValores(buscarGrupos(regexRestan, numero));
+        }else{
+            return 0;
+        }
     }
 
 }

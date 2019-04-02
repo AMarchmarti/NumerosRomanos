@@ -94,6 +94,7 @@ public class NumerosRomanosTest {
         String diosDos = "MMMCMXCIX";
         String cuatroCientosCatorce = "CDXIV";
         String cuatroCientosTreintaNueve  = "CDXXXIX";
+        String numeroFallo = "XCD";
         assertEquals(14, NumerosRomanos.valorFinal(facil), 0);
         assertEquals(26, NumerosRomanos.valorFinal(sencillo), 0);
         assertEquals(145, NumerosRomanos.valorFinal(normal), 0);
@@ -105,5 +106,6 @@ public class NumerosRomanosTest {
         assertEquals(3999, NumerosRomanos.valorFinal(diosDos), 0);
         assertEquals(414, NumerosRomanos.valorFinal(cuatroCientosCatorce), 0);
         assertEquals(439, NumerosRomanos.valorFinal(cuatroCientosTreintaNueve), 0);
+        assertEquals(0, NumerosRomanos.valorFinal(numeroFallo), 0);
     }
 }
